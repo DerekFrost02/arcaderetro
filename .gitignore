@@ -4,3 +4,4 @@ bin/ArcadeRetroApplication.class
 .project
 .settings/org.eclipse.core.resources.prefs
 bin/model/ArcadeRetro.class
+bin/service/ArcadeRetroService.class
