@@ -11,14 +11,12 @@ public class ArcadeRetroApplication {
 		boolean isInLoop = true;
 		ArcadeRetroService gameService = new ArcadeRetroService();
 		
+		gameService.printMenu();
+		
 		while(isInLoop)
 		{
-			
-			System.out.println("1) Aggiungi un gioco in arcade ");
-			System.out.println("2) Visualizza la lista di giochi completa ");
-			System.out.println("3) Cerca un gioco per una parola chiave nel nome ");
-			System.out.println("4) Visualizza solo i giochi con difficolta almeno di 4");
-			System.out.println("5) Esci dal menu principale ");
+			System.out.println(" ");
+			System.out.println(" Fai una scelta: ");
 			
 			int choose = scammer.nextInt();
 			scammer.nextLine();
@@ -44,14 +42,36 @@ public class ArcadeRetroApplication {
 			case 2: 
 				System.out.println("Visualizza lista: ");
 				gameService.printGameList();
+				
 			
 				break;
 			case 3: 
+				System.out.println("Inserisci la parola nel nome del gioco: ");
+				String word = scammer.nextLine();
+				gameService.searchGame(word);
+				
+				break;
+				
+			case 4: 
+				System.out.println("I giochi con difficolta almeno 4 sono: ");
+				gameService.printDifficultGameList();
+				
+				break;
+			case 5:
+				gameService.printMenu();
+				
+				break;
+				
+			case 6:
 				isInLoop = false;
 				break;
+				
 			}
-			System.out.println();
+			System.out.println(" ");
+			
 		}
+		
+		System.out.println(" Sei uscito dal menu ");
 		
 	}
 
