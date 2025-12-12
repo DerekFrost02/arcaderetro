@@ -3,3 +3,4 @@ bin/ArcadeRetroApplication.class
 .classpath
 .project
 .settings/org.eclipse.core.resources.prefs
+bin/model/ArcadeRetro.class
