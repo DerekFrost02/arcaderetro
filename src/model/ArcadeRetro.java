@@ -36,6 +36,12 @@ public class ArcadeRetro
 	public void setDifficolta(int difficolta) {
 		this.difficolta = difficolta;
 	}
+
+	@Override
+	public String toString() {
+		return "ArcadeRetro [nome = " + nome + ", anno = " + anno + ", difficolta = " + difficolta + "]";
+	}
+	
 	
 	
 
