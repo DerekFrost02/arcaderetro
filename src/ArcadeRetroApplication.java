@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.time.*;
 
 import service.ArcadeRetroService;
 
@@ -10,7 +11,7 @@ public class ArcadeRetroApplication {
 		Scanner scammer = new Scanner(System.in);
 		boolean isInLoop = true;
 		ArcadeRetroService gameService = new ArcadeRetroService();
-		
+		int annocorrente = Year.now().getValue();
 		gameService.printMenu();
 		
 		while(isInLoop)
@@ -30,11 +31,25 @@ public class ArcadeRetroApplication {
 				System.out.println("Inserisci anno di uscita del gioco: ");
 				int anno = scammer.nextInt();
 				scammer.nextLine();
+				while((anno < 1970) || (anno >= annocorrente )) 
+				{
+					System.out.println("Inserisci un anno vero e proprio");
+					System.out.println("Riprova per bene DHN: ");
+					anno = scammer.nextInt();
+					scammer.nextLine();
+				}
 				
-				System.out.println("Inserisci livello di difficolta: ");
+				System.out.println("Inserisci livello di difficolta da 1 a 1000000: ");
 				int dif = scammer.nextInt();
 				scammer.nextLine();
 				
+				while((dif < 0) || (dif >= 1000000))
+				{
+					System.out.println("Testa di cazzo hai sbagliato la difficolta va da 1 a 1000000");
+					System.out.println("Riprova per bene DHN: ");
+					dif = scammer.nextInt();
+					scammer.nextLine();
+				}
 				gameService.addGame(nome, anno, dif);
 				
 				break;
